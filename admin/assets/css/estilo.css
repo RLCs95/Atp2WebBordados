@@ -1,0 +1,62 @@
+/* Estilo personalizado para o sistema Bordado Industrial (área administrativa) */
+
+/* 
+  Boas Práticas Aplicadas:
+  1. CSS Custom Properties (Variáveis) para uma paleta de cores centralizada e fácil de manter.
+  2. Remoção de `!important` em favor de seletores mais específicos para evitar conflitos e facilitar a manutenção.
+     (Recomendação: adicione a classe `tema-admin` à tag `<body>` nas suas páginas da área administrativa)
+*/
+
+:root {
+    --cor-fundo: #fdf6ee;
+    --cor-fundo-card: #fffaf3;
+    --cor-fundo-navbar: #f5e6ca;
+    --cor-fundo-tabela-impar: #f9f3e8;
+    --cor-borda: #f5e6ca;
+    --cor-texto-principal: #a67c52;
+    --cor-texto-secundario: #7c6f57;
+    --cor-botao-primario: #eacda3;
+    --cor-botao-primario-hover: #f5e6ca;
+    --cor-alerta-sucesso-fundo: #f6eedf;
+    --cor-alerta-erro-fundo: #fbeee6;
+}
+
+body {
+    background-color: var(--cor-fundo);
+}
+
+.navbar {
+    background-color: var(--cor-fundo-navbar);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.navbar .navbar-brand, .navbar .nav-link {
+    color: var(--cor-texto-principal);
+}
+
+.card {
+    border-radius: 12px;
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+}
+
+/* Usar um seletor mais específico para sobrescrever o Bootstrap sem !important */
+.tema-admin .btn-primary {
+    background-color: var(--cor-botao-primario);
+    border-color: var(--cor-botao-primario);
+    color: var(--cor-texto-principal);
+}
+
+.tema-admin .btn-primary:hover {
+    background-color: var(--cor-botao-primario-hover);
+    border-color: var(--cor-botao-primario-hover);
+    color: var(--cor-texto-principal);
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: var(--cor-fundo-tabela-impar);
+}
+
+h2, h3, h4, .form-label {
+    color: var(--cor-texto-principal);
+}
